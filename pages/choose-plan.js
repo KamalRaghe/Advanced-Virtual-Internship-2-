@@ -5,7 +5,7 @@ import { FaHandshake } from "react-icons/fa"
 import { FaChevronDown } from "react-icons/fa";
 import { FaChevronUp } from "react-icons/fa";
 import { useEffect, useState } from "react"
-import { db, initFirebase } from "@/firebase";
+import { db, initFirebase , auth} from "@/firebase";
 import { addDoc, collection, onSnapshot, query, where} from "firebase/firestore"
 import { useRouter } from "next/router";
 import Modal from "@/components/modal";
