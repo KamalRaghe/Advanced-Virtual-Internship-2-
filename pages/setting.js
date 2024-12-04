@@ -27,7 +27,7 @@ export default function Setting(){
                 (snapshot) => {
                 if (snapshot.docs.length === 0) {
                     Payed(false);
-                    setType('')
+                    setType()
                 } else {
                     Payed(true);
                     setType(window.localStorage.getItem('payment'))
