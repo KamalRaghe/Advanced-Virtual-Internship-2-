@@ -62,8 +62,9 @@ export default function Modal({close}){
       }
 
       function signInWithGoogle(){
-        window.localStorage.setItem('User', `${auth.currentUser?.email}`)
-        window.localStorage.setItem('uid', `${auth.currentUser?.uid}`)
+        window.localStorage.setItem('User', auth.currentUser?.email)
+        console.log(auth.currentUser?.email)
+        window.localStorage.setItem('uid', auth.currentUser?.uid)
         signInWithPopup(auth, provider).then(
             router.push('/for-you')
         )
