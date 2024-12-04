@@ -45,7 +45,7 @@ export default function Setting(){
     useEffect(() =>{
         PayedCheck()
         console.log(auth)
-        setUser(window.localStorage.getItem('User'))
+        setUser(auth.currentUser?.email)
       })
         return(
           <div style={{display:"flex"}}>
