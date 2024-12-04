@@ -30,7 +30,7 @@ export default function ForYouPage(){
             window.localStorage.setItem('payment', type)
         }
     }
-    const userId = window.localStorage.getItem('uid');
+    const userId = auth.currentUser?.uid;
     if(userId){
       const checkoutSessionRef = collection(
         db,
