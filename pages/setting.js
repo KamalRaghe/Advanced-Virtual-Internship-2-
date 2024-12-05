@@ -44,7 +44,6 @@ export default function Setting(){
     
     useEffect(() =>{
         PayedCheck()
-        console.log(auth)
         setUser(auth.currentUser?.email)
       })
         return(

@@ -18,7 +18,6 @@ export default function Books({url,name,move,subName}){
         const { data } = await axios.get(url)
         setBooks(data)
         setLoaded(true)
-        console.log(data)
       }
 
       useEffect(()=>{

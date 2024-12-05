@@ -28,9 +28,9 @@ export default function NavBar(){
     return (
         <>
             <div style={{width:"100vw",height:"16vh",borderBottom:"1px solid lightgrey",paddingRight:"100px",display:"flex",justifyContent:"end",alignItems:"center"}} >
-                <input placeholder="Search for books" value={search} onChange = {(e) => {setSearch(e.target.value);console.log(e.target.value),fetchBooks()}}
+                <input placeholder="Search for books" value={search} onChange = {(e) => {setSearch(e.target.value);fetchBooks()}}
                 style={{zIndex:"100",backgroundColor:"#f1f6f4",border:"1px solid grey",paddingLeft:"20px",width:"280px",height:"40px"}} ></input>
-                <button onClick={()=>console.log('e')} style={{zIndex:"100",backgroundColor:"#f1f6f4",border:"1px solid grey",height:"40px",width:"40px",display:"flex",justifyContent:"center",alignItems:"center"}} >
+                <button  style={{zIndex:"100",backgroundColor:"#f1f6f4",border:"1px solid grey",height:"40px",width:"40px",display:"flex",justifyContent:"center",alignItems:"center"}} >
                     <div style={{scale:"1.8",position:"relative",top:"2px"}} ><GoSearch></GoSearch></div>
                  </button>
             </div>

@@ -95,8 +95,6 @@ export default function BookId(){
             }
         } 
        }, 2000);
-        
-        console.log(window.localStorage.getItem('audioLink'))
       },[])
       return(
         <div >

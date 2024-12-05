@@ -31,7 +31,6 @@ export default function ForYouPage(){
         }
     }
     const userId = auth.currentUser?.uid;
-    console.log(userId)
     if(userId){
       const checkoutSessionRef = collection(
         db,
