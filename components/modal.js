@@ -61,11 +61,11 @@ export default function Modal({close}){
           })
       }
 
-      function signInWithGoogle(){
-        signInWithPopup(auth, provider).then(
-            router.push('/for-you')
-        )
-      }
+    //   function signInWithGoogle(){
+    //     signInWithPopup(auth, provider).then(
+    //         router.push('/for-you')
+    //     )
+    //   }
 
       function signInAnonymous(){
         signInAnonymously(auth).then(
@@ -92,13 +92,13 @@ export default function Modal({close}){
                     </button>
                 </div>
                
-                <div style={{display:"flex",justifyContent:"space-between",margin:"10px",width:"95%"}}>
+                <div style={{display:"flex",justifyContent:"space-between",margin:"20px 10px",width:"95%"}}>
                     <div style={{borderBottom:"1px solid black",width:"35%",position:"relative",bottom:"8px",opacity:"0.5" }}></div>
                     or
                     <div style={{borderBottom:"1px solid black",width:"35%",position:"relative",bottom:"8px",opacity:"0.5" }}></div>
                 </div>
                
-                <div className="modal__buttons">
+                {/* <div className="modal__buttons">
                 <button onClick={signInWithGoogle} className="modal-btn" style={{backgroundColor:"#0365f2",color:"white"}} >
                     <div style={{backgroundColor:"white",display:"flex",justifyContent:"center",alignItems:"center",width:"40px",height:"40px",borderRadius:"5px"}} >
                         <img style={{scale:"0.25"}} src="google.png" alt="logo" /></div>
@@ -112,7 +112,7 @@ export default function Modal({close}){
                     <div style={{borderBottom:"1px solid black",width:"35%",position:"relative",bottom:"8px",opacity:"0.5" }}></div>
                     or
                     <div style={{borderBottom:"1px solid black",width:"35%",position:"relative",bottom:"8px",opacity:"0.5" }}></div>
-                </div>
+                </div> */}
                
                 <input style={{width:"366px",height:"35px",marginBottom:"8px",padding:"8px"}} placeholder="Email Address" name='email' type='email' value={account.title} onChange = {(e) => setAccount({...account, title: e.target.value})} ></input>
                
@@ -132,7 +132,7 @@ export default function Modal({close}){
             <p className="modal__title">Sign up to Summarist</p>
             <div style={{color:"red"}}  >{message}</div>
             <br></br>
-            <div className="modal__buttons">
+            {/* <div className="modal__buttons">
             <button onClick={signInWithGoogle} className="modal-btn" style={{backgroundColor:"#0365f2",color:"white"}} >
                 <div style={{backgroundColor:"white",display:"flex",justifyContent:"center",alignItems:"center",width:"40px",height:"40px",borderRadius:"5px"}} >
                     <img style={{scale:"0.25"}} src="google.png" alt="logo" /></div>
@@ -146,7 +146,7 @@ export default function Modal({close}){
                 <div style={{borderBottom:"1px solid black",width:"35%",position:"relative",bottom:"8px",opacity:"0.5" }}></div>
                 or
                 <div style={{borderBottom:"1px solid black",width:"35%",position:"relative",bottom:"8px",opacity:"0.5" }}></div>
-            </div>
+            </div> */}
            
             <input style={{width:"366px",height:"35px",marginBottom:"8px",padding:"8px"}} placeholder="Email Address" name='email' type='email' value={account.title} onChange = {(e) => setAccount({...account, title: e.target.value})} ></input>
            
