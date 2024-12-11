@@ -26,14 +26,14 @@ export default function Books({url,name,move,up,subName}){
         }, 1000);
       },[])
       return(
-        <div >
+        <div>
                 <div className="BookScreen" style={{position:"relative",display:"flex",justifyContent:"start",marginBottom:"150px",bottom:up}}>            
                     <div style={{position:"relative",left:"30px"}}>
                       <div style={{width:"700px",height:"25px",display:"flex",justifyContent:"start",color:"navy",fontSize:"20px",fontWeight:"bolder"}} >{name}</div>
                       <br></br>
                       <div>{subName}</div>
                     </div>
-                    {loaded ? <div className="faded" style={{width:"58%",height:"460px",display:"flex",position:"relative",right:move}}>
+                    {loaded ? <div className="faded scrollbar" style={{width:"58%",height:"460px",display:"flex",position:"relative",right:move}}>
                         {books.map(book =>{
                         return <div key={book.id} onClick={()=>{router.push(`/book/${book.id}`)}} style={{scale:"0.29",width:"200px",height:"300px",position:"relative"}} >
                               {book.subscriptionRequired && <div className="center" style={{backgroundColor:"black",fontSize:"40px",position:"absolute",top:"-110px",left:'250px',borderRadius:"60px",width:"380px",height:"90px",color:"white"}} >Premium</div>}

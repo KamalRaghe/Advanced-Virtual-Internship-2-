@@ -139,7 +139,13 @@
   align-items: center;
   gap: 16px;
 }
- 
+
+.scrollbar {
+  overflow: scroll; 
+  scrollbar-width: none;
+  -ms-overflow-style: none; 
+}
+
 .backdrop {
   position: fixed;
   z-index: 100;
