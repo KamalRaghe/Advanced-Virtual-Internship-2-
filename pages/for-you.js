@@ -13,7 +13,7 @@ export default function ForYouPage(){
                 <NavBar></NavBar>
                 <Book></Book>
                 <Books url= {"https://us-central1-summaristt.cloudfunctions.net/getBooks?status=recommended"} name={'Recommended For You'} subName={'We think you’ll like these'} move={'735px'}/>
-                <Books url= {"https://us-central1-summaristt.cloudfunctions.net/getBooks?status=suggested"} subName={'Browse those books'} move={'735px'} name={'Suggested Books'}/>
+                <Books url= {"https://us-central1-summaristt.cloudfunctions.net/getBooks?status=suggested"} subName={'Browse those books'} move={'735px'} up={"90px"} name={'Suggested Books'}/>
               </div>
         </div>
       )

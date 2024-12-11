@@ -8,7 +8,7 @@ import { useRouter } from "next/router";
 import AudioPlayer from "./audio";
 import Time from "./time";
 
-export default function Books({url,name,move,subName}){
+export default function Books({url,name,move,up,subName}){
   const [books, setBooks] = useState([1,2,3,4,5])
   const [loaded, setLoaded] = useState(false)
   const router = useRouter()
@@ -27,13 +27,13 @@ export default function Books({url,name,move,subName}){
       },[])
       return(
         <div >
-                <div className="BookScreen" style={{position:"relative",display:"flex",justifyContent:"start",marginBottom:"150px"}}>            
+                <div className="BookScreen" style={{position:"relative",display:"flex",justifyContent:"start",marginBottom:"150px",bottom:up}}>            
                     <div style={{position:"relative",left:"30px"}}>
                       <div style={{width:"700px",height:"25px",display:"flex",justifyContent:"start",color:"navy",fontSize:"20px",fontWeight:"bolder"}} >{name}</div>
                       <br></br>
                       <div>{subName}</div>
                     </div>
-                    {loaded ? <div className="faded" style={{width:"58%",msOverflowX:"scroll",border:"1px solid black",display:"flex",position:"relative",right:move,bottom:"0px"}}>
+                    {loaded ? <div className="faded" style={{width:"58%",height:"460px",display:"flex",position:"relative",right:move}}>
                         {books.map(book =>{
                         return <div key={book.id} onClick={()=>{router.push(`/book/${book.id}`)}} style={{scale:"0.29",width:"200px",height:"300px",position:"relative"}} >
                               {book.subscriptionRequired && <div className="center" style={{backgroundColor:"black",fontSize:"40px",position:"absolute",top:"-110px",left:'250px',borderRadius:"60px",width:"380px",height:"90px",color:"white"}} >Premium</div>}
