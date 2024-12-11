@@ -9,6 +9,7 @@ import Modal from "@/components/modal";
 export default function Setting(){
     const [payed, Payed] = useState()
     const [modal, setModal] = useState()
+    const [loaded, setLoaded] = useState()
     const [user, setUser] = useState()
     const [type, setType] = useState()
     const router = useRouter()
@@ -44,6 +45,7 @@ export default function Setting(){
     
     useEffect(() =>{
         PayedCheck()
+        setLoaded(true)
         setUser(auth.currentUser?.email)
       })
         return(
@@ -56,7 +58,7 @@ export default function Setting(){
                         <div style={{marginLeft:"10px"}}>
                             <div style={{color:"#032b41",fontSize:"18px",fontWeight:"bolder"}}>Your Subscription plan</div>
                             <div style={{color:"#032b41",paddingTop:"10px",paddingBottom:"20px"}} >{type ? type: 'Basic'}</div>
-                            {!type && <button onClick={()=>router.push('/choose-plan')} className="btn" style={{width:"100px",marginBottom:"20px"}}> Upgrade to Premium</button>}
+                            {!type && loaded && <button onClick={()=>router.push('/choose-plan')} className="btn" style={{width:"100px",marginBottom:"20px"}}> Upgrade to Premium</button>}
                             <div style={{borderBottom:"1px solid lightgrey"}} ></div>
                             {user && <div style={{color:"#032b41",fontSize:"18px",fontWeight:"bolder",marginTop:"30px",paddingBottom:"10px"}} >Email</div>}
                             <div>{user}</div>

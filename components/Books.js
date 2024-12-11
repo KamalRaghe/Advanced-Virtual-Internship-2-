@@ -33,7 +33,7 @@ export default function Books({url,name,move,subName}){
                       <br></br>
                       <div>{subName}</div>
                     </div>
-                    {loaded ? <div className="faded" style={{display:"flex",position:"relative",right:move,bottom:"0px"}}>
+                    {loaded ? <div className="faded" style={{width:"58%",border:"1px solid black",display:"flex",position:"relative",right:move,bottom:"0px"}}>
                         {books.map(book =>{
                         return <div key={book.id} onClick={()=>{router.push(`/book/${book.id}`)}} style={{scale:"0.29",width:"200px",height:"300px",position:"relative"}} >
                               {book.subscriptionRequired && <div className="center" style={{backgroundColor:"black",fontSize:"40px",position:"absolute",top:"-110px",left:'250px',borderRadius:"60px",width:"380px",height:"90px",color:"white"}} >Premium</div>}
