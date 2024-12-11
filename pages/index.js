@@ -28,7 +28,7 @@ export default function Home(){
       <div class="nav__img--mask">
           <img class="nav__img" src="logo.png" alt="logo" />
         </div>
-        {modal && <Modal close={()=>{setModal()}} ></Modal>}
+        {modal && <Modal togo = {true} close={()=>{setModal()}} ></Modal>}
         <ul class="nav__list--wrapper">
           <button onClick={()=>{setModal(true)}} class="nav__list nav__list--login">Login</button>
           <li class="nav__list nav__list--mobile">About</li>
