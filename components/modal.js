@@ -26,7 +26,12 @@ export default function Modal({close, togo}){
           window.localStorage.setItem('User', `${auth.currentUser?.email}`)
           window.localStorage.setItem('uid', `${auth.currentUser?.uid}`)
           signInWithEmailAndPassword(auth,email,password).then(()=>{
-            router.push('/for-you')
+            if(togo){
+                router.push('/for-you')
+            }else{
+                router.reload
+                close()
+            }
           }).catch(err =>{
             setMessage(err.message)
             setTimeout(() => {
@@ -52,7 +57,12 @@ export default function Modal({close, togo}){
           window.localStorage.setItem('User', `${auth.currentUser?.email}`)
           window.localStorage.setItem('uid', `${auth.currentUser?.uid}`)
           createUserWithEmailAndPassword(auth,email,password).then(()=>{
-            router.push('/for-you')
+            if(togo){
+                router.push('/for-you')
+            }else{
+                router.reload
+                close()
+            }
           }).catch(err =>{
             setMessage(err.message)
             setTimeout(() => {
@@ -69,6 +79,7 @@ export default function Modal({close, togo}){
 
       function signInAnonymous(){
         signInAnonymously(auth).then(() => {
+            console.log(auth.currentUser.uid)
             window.localStorage.setItem('uid', auth.currentUser.uid)
             if(togo){
                 router.push('/for-you')
