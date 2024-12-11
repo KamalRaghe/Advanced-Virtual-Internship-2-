@@ -2,7 +2,7 @@ import { FaHouse } from "react-icons/fa6";
 import { CiBookmark, CiSettings, CiCircleQuestion } from "react-icons/ci";
 import { FaPenClip } from "react-icons/fa6";
 import { GoSearch } from "react-icons/go";
-import { MdLogout } from "react-icons/md";
+import { MdLogout, MdLogin } from "react-icons/md";
 import { IoMdMenu } from "react-icons/io";
 import { useEffect, useState } from "react";
 import { IoClose } from "react-icons/io5";
@@ -15,6 +15,7 @@ export default function SideBar({small}){
     const [close, setClose] = useState(false)
     const [overflow, setOverflow] = useState('')
     const [width, setWidth] = useState('100vh')
+    const [login,setLogin] = useState(auth)
 
     const router = useRouter()
 
@@ -47,7 +48,7 @@ export default function SideBar({small}){
                     <div className="side-bar__icon"><div style={{scale:"1.2",position:"relative",top:"2px"}} ><GoSearch></GoSearch></div> <div style={{margin:"5px"}} ></div>Search</div>
                     <div className="side-bar__icon" onClick={()=>router.push('/setting')} ><div style={{scale:"1.3",position:"relative",top:"2px"}} ><CiSettings></CiSettings></div> <div style={{margin:"5px"}} ></div>Settings</div>
                     <div className="side-bar__icon"><div style={{scale:"1.2",position:"relative",top:"2px"}} ><CiCircleQuestion></CiCircleQuestion></div> <div style={{fontSize:"13px",margin:'5px'}} >Help & Support</div></div>
-                    <div onClick={Logout} className="side-bar__icon"><MdLogout></MdLogout> <div style={{margin:"5px"}} >Logout</div></div>
+                    {login ? <div onClick={Logout} className="side-bar__icon"><MdLogout></MdLogout> <div style={{margin:"5px"}} >Logout</div></div>:<div onClick={Logout} className="side-bar__icon"><MdLogin></MdLogin> <div style={{margin:"5px"}} >Login</div></div>}
                 </div>
             </div>
         </div>

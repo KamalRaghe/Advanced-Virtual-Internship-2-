@@ -15,9 +15,6 @@ export default function Setting(){
     const router = useRouter()
     async function PayedCheck() {
         const userId = window.localStorage.getItem('uid')
-        if(!userId){
-            setModal(true)
-        }
             const subscriptionsRef = collection(db, "customers", userId, "subscriptions");
             const q = query(
             subscriptionsRef,
