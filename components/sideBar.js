@@ -1,4 +1,4 @@
-import { FaHouse } from "react-icons/fa6";
+import { FaHouse, FaLessThanEqual } from "react-icons/fa6";
 import { CiBookmark, CiSettings, CiCircleQuestion } from "react-icons/ci";
 import { FaPenClip } from "react-icons/fa6";
 import { GoSearch } from "react-icons/go";
@@ -10,7 +10,7 @@ import { useRouter } from "next/router";
 import { auth } from "@/firebase";
 
 
-export default function SideBar({small}){
+export default function SideBar({small,open}){
     const [menu, setMenu] = useState("sideBar")
     const [close, setClose] = useState(false)
     const [overflow, setOverflow] = useState('')
@@ -21,6 +21,7 @@ export default function SideBar({small}){
 
     function Logout(){
         auth.signOut()
+        setLogin(false)
         window.localStorage.setItem('User', '')
         window.localStorage.setItem('uid', '')
     }
@@ -48,7 +49,7 @@ export default function SideBar({small}){
                     <div className="side-bar__icon"><div style={{scale:"1.2",position:"relative",top:"2px"}} ><GoSearch></GoSearch></div> <div style={{margin:"5px"}} ></div>Search</div>
                     <div className="side-bar__icon" onClick={()=>router.push('/setting')} ><div style={{scale:"1.3",position:"relative",top:"2px"}} ><CiSettings></CiSettings></div> <div style={{margin:"5px"}} ></div>Settings</div>
                     <div className="side-bar__icon"><div style={{scale:"1.2",position:"relative",top:"2px"}} ><CiCircleQuestion></CiCircleQuestion></div> <div style={{fontSize:"13px",margin:'5px'}} >Help & Support</div></div>
-                    {login ? <div onClick={Logout} className="side-bar__icon"><MdLogout></MdLogout> <div style={{margin:"5px"}} >Logout</div></div>:<div onClick={Logout} className="side-bar__icon"><MdLogin></MdLogin> <div style={{margin:"5px"}} >Login</div></div>}
+                    {login ? <div onClick={Logout} className="side-bar__icon"><MdLogout></MdLogout> <div style={{margin:"5px"}} >Logout</div></div>:<div onClick={()=>{open;setLogin(true)}} className="side-bar__icon"><MdLogin></MdLogin> <div style={{margin:"5px"}} >Login</div></div>}
                 </div>
             </div>
         </div>

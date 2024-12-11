@@ -46,7 +46,7 @@ export default function Setting(){
       })
         return(
           <div style={{display:"flex"}}>
-               <SideBar></SideBar>
+               <SideBar open ={()=>setModal(true)} ></SideBar>
                <div >
                     <NavBar></NavBar>
                     <div className="BookScreen">
