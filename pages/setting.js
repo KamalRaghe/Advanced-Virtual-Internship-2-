@@ -38,6 +38,10 @@ export default function Setting(){
             );
             });
       };
+
+      function open(){
+        setModal(true)
+      }
     
     useEffect(() =>{
         PayedCheck()
@@ -46,7 +50,7 @@ export default function Setting(){
       })
         return(
           <div style={{display:"flex"}}>
-               <SideBar open ={()=>setModal(true)} ></SideBar>
+               <SideBar open ={open} ></SideBar>
                <div >
                     <NavBar></NavBar>
                     <div className="BookScreen">

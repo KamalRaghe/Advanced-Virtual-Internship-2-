@@ -69,8 +69,12 @@ export default function Modal({close, togo}){
 
       function signInAnonymous(){
         signInAnonymously(auth).then(() => {
+            window.localStorage.setItem('uid', auth.currentUser.uid)
             if(togo){
                 router.push('/for-you')
+            }else{
+                router.reload
+                close()
             }
         })
       }

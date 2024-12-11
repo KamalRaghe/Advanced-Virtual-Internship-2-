@@ -15,13 +15,14 @@ export default function SideBar({small,open}){
     const [close, setClose] = useState(false)
     const [overflow, setOverflow] = useState('')
     const [width, setWidth] = useState('100vh')
-    const [login,setLogin] = useState(auth)
+    const [login,setLogin] = useState(auth.currentUser?.uid)
 
     const router = useRouter()
 
     function Logout(){
         auth.signOut()
         setLogin(false)
+        router.reload()
         window.localStorage.setItem('User', '')
         window.localStorage.setItem('uid', '')
     }
@@ -31,6 +32,7 @@ export default function SideBar({small,open}){
             setWidth('87vh')
             setOverflow('scroll')
         }
+        setLogin(auth.currentUser.uid)
     },[])
 
     return(
