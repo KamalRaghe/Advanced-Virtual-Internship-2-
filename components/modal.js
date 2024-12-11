@@ -10,7 +10,7 @@ import { signInWithPopup,
 } from "firebase/auth"
 
 
-export default function Modal({close}){
+export default function Modal({close, togo}){
     const [login, setLogin] = useState(true)
     const [message, setMessage] = useState()
     const [account, setAccount] = useState({
@@ -68,9 +68,11 @@ export default function Modal({close}){
     //   }
 
       function signInAnonymous(){
-        signInAnonymously(auth).then(
-            router.push('/for-you')
-        )
+        signInAnonymously(auth).then(() => {
+            if(togo){
+                router.push('/for-you')
+            }
+        })
       }
 
     return (
