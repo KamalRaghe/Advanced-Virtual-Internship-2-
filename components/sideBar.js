@@ -33,7 +33,6 @@ export default function SideBar({small,open}){
             setOverflow('scroll')
         }
         setLogin(window.localStorage.getItem('uid'))
-        console.log(window.localStorage.getItem('uid'))
     },[])
 
     return(
