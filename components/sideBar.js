@@ -32,7 +32,8 @@ export default function SideBar({small,open,log}){
             setWidth('87vh')
             setOverflow('scroll')
         }
-        setLogin(log)
+        setLogin(auth.currentUser?.uid)
+        console.log(auth.currentUser?.uid)
     },[])
 
     return(

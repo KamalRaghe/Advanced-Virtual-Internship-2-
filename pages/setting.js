@@ -15,6 +15,7 @@ export default function Setting(){
     const router = useRouter()
     async function PayedCheck() {
         const userId = window.localStorage.getItem('uid')
+        if(userId){
             const subscriptionsRef = collection(db, "customers", userId, "subscriptions");
             const q = query(
             subscriptionsRef,
@@ -37,7 +38,8 @@ export default function Setting(){
                 reject
             );
             });
-      };
+        }
+        };
 
       function open(){
         setModal(true)
