@@ -64,9 +64,10 @@ export default function Setting(){
                             <div style={{borderBottom:"1px solid lightgrey"}} ></div>
                             {user && <div style={{color:"#032b41",fontSize:"18px",fontWeight:"bolder",marginTop:"30px",paddingBottom:"10px"}} >Email</div>}
                             <div>{user}</div>
-                        </div>:<div className="center" style={{justifyContent:"center",height:"500px",border:"1px solid black"}}>
-                                <img style={{scale:"0.5"}} src={'login.png'} ></img>
-                                <div>Log in to your account to see your details.</div>
+                        </div>:<div>
+                                <img style={{scale:"0.45",position:"relative",right:"20px",bottom:"190px"}} src={'login.png'} ></img>
+                                <div className="center" style={{position:"relative",bottom:"400px",fontSize:"24px",color:"#032b41",fontWeight:"bolder"}} >Log in to your account to see your details.</div>
+                                <button onClick={()=>{setModal(true)}} class="nav__list nav__list--login">Login</button>
                             </div>}
                         {modal && <Modal close={()=>setModal(false)} />}
                     </div>
