@@ -10,7 +10,7 @@ import { useRouter } from "next/router";
 import { auth } from "@/firebase";
 
 
-export default function SideBar({small,open}){
+export default function SideBar({small,open,log}){
     const [menu, setMenu] = useState("sideBar")
     const [close, setClose] = useState(false)
     const [overflow, setOverflow] = useState('')
@@ -32,7 +32,7 @@ export default function SideBar({small,open}){
             setWidth('87vh')
             setOverflow('scroll')
         }
-        setLogin(window.localStorage.getItem('uid'))
+        setLogin(log)
     },[])
 
     return(
