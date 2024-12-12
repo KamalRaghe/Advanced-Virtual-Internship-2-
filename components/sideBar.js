@@ -10,7 +10,7 @@ import { useRouter } from "next/router";
 import { auth } from "@/firebase";
 
 
-export default function SideBar({small,open,logout}){
+export default function SideBar({small,open}){
     const [menu, setMenu] = useState("sideBar")
     const [close, setClose] = useState(false)
     const [overflow, setOverflow] = useState('')
@@ -20,7 +20,9 @@ export default function SideBar({small,open,logout}){
     const router = useRouter()
 
     function Logout(){
-        logout()
+        auth.signOut()
+        window.localStorage.setItem('User', '')
+        window.localStorage.setItem('uid', '')
         setLogin(false)
     }
 

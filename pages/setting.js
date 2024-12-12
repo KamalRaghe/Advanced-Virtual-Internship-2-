@@ -45,12 +45,6 @@ export default function Setting(){
         setModal(true)
       }
 
-      function logout(){
-        auth.signOut()
-        window.localStorage.setItem('User', '')
-        window.localStorage.setItem('uid', '')
-      }
-    
     useEffect(() =>{
         PayedCheck()
         setLoaded(window.localStorage.getItem('uid'))
