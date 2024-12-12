@@ -44,6 +44,12 @@ export default function Setting(){
       function open(){
         setModal(true)
       }
+
+      function logout(){
+        auth.signOut()
+        window.localStorage.setItem('User', '')
+        window.localStorage.setItem('uid', '')
+      }
     
     useEffect(() =>{
         PayedCheck()
@@ -52,7 +58,7 @@ export default function Setting(){
       })
         return(
           <div style={{display:"flex"}}>
-               <SideBar open ={open} log={loaded}></SideBar>
+               <SideBar open ={open} logout={logout}></SideBar>
                <div >
                     <NavBar></NavBar>
                     <div className="BookScreen">

@@ -20,11 +20,8 @@ export default function SideBar({small,open,logout}){
     const router = useRouter()
 
     function Logout(){
-        auth.signOut()
+        logout()
         setLogin(false)
-        window.localStorage.setItem('User', '')
-        window.localStorage.setItem('uid', '')
-        console.log(auth.currentUser?.uid)
     }
 
     useEffect(()=>{
