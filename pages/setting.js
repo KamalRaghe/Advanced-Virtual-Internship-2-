@@ -52,7 +52,7 @@ export default function Setting(){
       })
         return(
           <div style={{display:"flex"}}>
-               <SideBar open ={open} logout={logout}></SideBar>
+               <SideBar open ={open} ></SideBar>
                <div >
                     <NavBar></NavBar>
                     <div className="BookScreen">

@@ -24,6 +24,7 @@ export default function SideBar({small,open}){
         window.localStorage.setItem('User', '')
         window.localStorage.setItem('uid', '')
         setLogin(false)
+        router.reload()
     }
 
     useEffect(()=>{
