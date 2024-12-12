@@ -47,7 +47,7 @@ export default function Setting(){
     
     useEffect(() =>{
         PayedCheck()
-        setLoaded(auth.currentUser?.uid)
+        setLoaded(window.localStorage.getItem('uid'))
         setUser(auth.currentUser?.email)
       })
         return(
