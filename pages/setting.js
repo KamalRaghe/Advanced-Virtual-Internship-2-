@@ -64,8 +64,9 @@ export default function Setting(){
                             <div style={{borderBottom:"1px solid lightgrey"}} ></div>
                             {user && <div style={{color:"#032b41",fontSize:"18px",fontWeight:"bolder",marginTop:"30px",paddingBottom:"10px"}} >Email</div>}
                             <div>{user}</div>
-                        </div>:<div>
-                                <img src={'login.png'} ></img>
+                        </div>:<div style={{position:'relative',bottom:"220px",right:"40px"}}>
+                                <img style={{scale:"0.5"}} src={'login.png'} ></img>
+                                <div>Log in to your account to see your details.</div>
                             </div>}
                         {modal && <Modal close={()=>setModal(false)} />}
                     </div>
