@@ -8,9 +8,10 @@ import { useEffect, useState } from "react";
 import { IoClose } from "react-icons/io5";
 import { useRouter } from "next/router";
 import { auth } from "@/firebase";
+import Setting from "@/pages/setting";
 
 
-export default function SideBar({small,open}){
+export default function SideBar({small,open,setting}){
     const [menu, setMenu] = useState("sideBar")
     const [close, setClose] = useState(false)
     const [overflow, setOverflow] = useState('')
@@ -25,6 +26,12 @@ export default function SideBar({small,open}){
         window.localStorage.setItem('uid', '')
         setLogin(false)
         router.reload()
+    }
+
+    function Login(){
+        if(setting){
+            open()
+        }
     }
 
     useEffect(()=>{
@@ -51,7 +58,7 @@ export default function SideBar({small,open}){
                     <div className="side-bar__icon"><div style={{scale:"1.2",position:"relative",top:"2px"}} ><GoSearch></GoSearch></div> <div style={{margin:"5px"}} ></div>Search</div>
                     <div className="side-bar__icon" onClick={()=>router.push('/setting')} ><div style={{scale:"1.3",position:"relative",top:"2px"}} ><CiSettings></CiSettings></div> <div style={{margin:"5px"}} ></div>Settings</div>
                     <div className="side-bar__icon"><div style={{scale:"1.2",position:"relative",top:"2px"}} ><CiCircleQuestion></CiCircleQuestion></div> <div style={{fontSize:"13px",margin:'5px'}} >Help & Support</div></div>
-                    {login ? <div onClick={Logout} className="side-bar__icon"><MdLogout></MdLogout> <div style={{margin:"5px"}} >Logout</div></div>:<div onClick={()=>{open()}} className="side-bar__icon"><MdLogin></MdLogin> <div style={{margin:"5px"}} >Login</div></div>}
+                    {login ? <div onClick={Logout} className="side-bar__icon"><MdLogout></MdLogout> <div style={{margin:"5px"}} >Logout</div></div>:<div onClick={Login} className="side-bar__icon"><MdLogin></MdLogin> <div style={{margin:"5px"}} >Login</div></div>}
                 </div>
             </div>
         </div>

@@ -52,7 +52,7 @@ export default function Setting(){
       })
         return(
           <div style={{display:"flex"}}>
-               <SideBar open ={open} ></SideBar>
+               <SideBar open ={open} setting={true} ></SideBar>
                <div >
                     <NavBar></NavBar>
                     <div className="BookScreen">
