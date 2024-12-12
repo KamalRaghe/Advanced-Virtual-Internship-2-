@@ -57,14 +57,16 @@ export default function Setting(){
                     <NavBar></NavBar>
                     <div className="BookScreen">
                         <div style={{color:"#032b41",fontSize:"32px",fontWeight:"bolder",margin:"10px",marginBottom:"30px",padding:"20px 0px",borderBottom:"1px solid lightgrey"}} >Settings</div>
-                        {loaded && <div style={{marginLeft:"10px"}}>
+                        {loaded ? <div style={{marginLeft:"10px"}}>
                             <div style={{color:"#032b41",fontSize:"18px",fontWeight:"bolder"}}>Your Subscription plan</div>
                             <div style={{color:"#032b41",paddingTop:"10px",paddingBottom:"20px"}} >{type ? type: 'Basic'}</div>
                             {!type && loaded && <button onClick={()=>router.push('/choose-plan')} className="btn" style={{width:"100px",marginBottom:"20px"}}> Upgrade to Premium</button>}
                             <div style={{borderBottom:"1px solid lightgrey"}} ></div>
                             {user && <div style={{color:"#032b41",fontSize:"18px",fontWeight:"bolder",marginTop:"30px",paddingBottom:"10px"}} >Email</div>}
                             <div>{user}</div>
-                        </div>}
+                        </div>:<div>
+                                <img src={'login.png'} ></img>
+                            </div>}
                         {modal && <Modal close={()=>setModal(false)} />}
                     </div>
                 </div>
