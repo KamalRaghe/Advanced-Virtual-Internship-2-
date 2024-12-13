@@ -67,7 +67,7 @@ export default function Setting(){
                         </div>:<div>
                                 <img style={{scale:"0.45",position:"relative",right:"20px",bottom:"200px"}} src={'login.png'} ></img>
                                 <div className="center" style={{position:"relative",bottom:"400px",fontSize:"24px",color:"#032b41",fontWeight:"bolder"}} >Log in to your account to see your details.</div>
-                                <div className="center" ><button onClick={()=>{setModal(true)}} style={{position:"relative",bottom:"380px",left:"0px",width:"100px"}}  class="btn">Login</button></div>
+                                <div className="center" ><button onClick={()=>{setModal(true)}} style={{position:"relative",bottom:"380px",left:"10px",width:"100px"}}  class="btn">Login</button></div>
                             </div>}
                         {modal && <Modal close={()=>setModal(false)} />}
                     </div>
